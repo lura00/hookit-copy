@@ -1,8 +1,7 @@
-from unicodedata import name
 import database
-import random
 
-USER_MENU = """------------------------
+
+USER_MENU = """  ------------------------
                  | Welcome to Hookit!   |
                  |  1. Add user         |
                  |  2. See all users    |
@@ -11,11 +10,6 @@ USER_MENU = """------------------------
                  ------------------------
 
 Your selection:
-"""
-
-FORMAT_MENU = """
-Spin the Wheel!
-Press Enter to spin the wheel!
 """
 
 
@@ -36,7 +30,7 @@ def user_menu():
             user = database.get_all_users(connection)
 
             for u in user:
-                print(f"{user[1]}, {user[2]}, {user[3]}")
+                print(f"{u[1]}, {u[2]}, {u[3]}")
         elif user_input == "3":
             name = input("Enter users name to find: ")
             user = database.get_user_by_name(connection, name)
@@ -47,36 +41,5 @@ def user_menu():
         else:
             print("Invalid input!")
 
-random_number = random.randint(1, 5)
-answer = ""
-while (format_input := input(FORMAT_MENU)) != "6":
-    def format_menu():
-        connection = database.connect()
-        database.create_tables(connection)
-        format_input = input()
-        if random_number == 1:
-            answer = "Match Play"
-        
-        elif random_number == 2:
-            answer = "Scramble"
 
-        elif random_number == 3:
-            answer = "Stroke Play"
-        
-        elif random_number == 4:
-            answer = "Bestball"
-
-        elif random_number == 5:
-            answer = "Alternate Shot"
-
-        else:
-            "Error, please try again"
-
-        print(f'The format you will be playing is: {answer}')
-
-        
-
-
-format_menu()
 user_menu()
-
