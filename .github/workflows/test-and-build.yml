@@ -1,0 +1,20 @@
+name: Test code and build a docker image
+
+on: push
+
+jobs:
+  lint_python:
+    name: Lint code base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v2
+      - name: Set up python env
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9", "3.8", "3.7"
+      - name: lint code
+        uses: py-actions/flake8@v2
+        with:
+          ignore: "E501"
+          path: "app"
