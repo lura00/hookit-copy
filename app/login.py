@@ -2,20 +2,35 @@ from tkinter import *
 import sqlite3
 import random
 
+def login():
 
-root = Tk()
-root.title('Hookit')
-root.geometry("325x250")
+    root = Tk()
+    root.title('Hookit')
+    root.geometry("325x250")
+
+    username = Entry(root, width=30)
+    username.grid(row=0, column=1, padx=20)
+    password = Entry(root, width=30)
+    password.grid(row=1, column=1)
+
+    username_label = Label(root, text='Username')
+    username_label.grid(row=0, column=0)
+    password_label = Label(root, text="Password")
+    password_label.grid(row=1, column=0)
+
+    submit_btn = Button(root, text="Login")
+    submit_btn.grid(row=2, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
 
 
+    root.mainloop()
 
-
+    return username_label, password_label
 #Create database connection
-def submit():
+# def submit():
    
-    conn = sqlite3.connect('hookit.db')
+#     conn = sqlite3.connect('hookit.db')
 
-    c = conn.cursor()
+#     c = conn.cursor()
     # c.execute("CREATE TABLE player (username TEXT, password TEXT);")
 #     values = {
 #     'id': Integer, 'username': text, 'password': text
@@ -24,32 +39,18 @@ def submit():
 #     c.execute(
 #     'INSERT INTO players (id, username, password) VALUES (:id, :username, :password);', 
 #     values)
-    c.execute("INSERT INTO players VALUES (:id, :username, :password);", {"id": key.get(), "username": username.get(), "password": password.get()})
+#     c.execute("INSERT INTO players VALUES (:id, :username, :password);", {"id": key.get(), "username": username.get(), "password": password.get()})
     
-    conn.commit()
-    conn.close()
+#     conn.commit()
+#     conn.close()
 
-key = {k: random.random() for k in range(100)}
+# key = {k: random.random() for k in range(100)}
 
 
     
   
 
-username = Entry(root, width=30)
-username.grid(row=0, column=1, padx=20)
-password = Entry(root, width=30)
-password.grid(row=1, column=1)
 
-username_label = Label(root, text='Username')
-username_label.grid(row=0, column=0)
-password_label = Label(root, text="Password")
-password_label.grid(row=1, column=0)
-
-submit_btn = Button(root, text="Add User", command=submit)
-submit_btn.grid(row=2, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
-
-
-root.mainloop()
 
     
 # root.mainloop()
