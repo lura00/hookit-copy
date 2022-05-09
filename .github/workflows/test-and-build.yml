@@ -6,13 +6,16 @@ jobs:
   lint_python:
     name: Lint code base
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ '3.9', '3.8', '3.7' ]
     steps:
       - name: Check out source repository
         uses: actions/checkout@v2
       - name: Set up python env
         uses: actions/setup-python@v2
         with:
-          python-version: "3.9", "3.8", "3.7"
+          python-version: ${{ matrix.python-version }}
       - name: lint code
         uses: py-actions/flake8@v2
         with:
