@@ -8,8 +8,8 @@ Press Enter to spin the wheel!
 random_number = random.randint(1, 5)
 answer = ""
 
+
 def format_menu():
-    
 
     if random_number == 1:
         answer = "Match Play"
