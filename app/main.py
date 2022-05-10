@@ -2,7 +2,7 @@ import database
 from login import login
 
 
-USER_MENU = """  
+USER_MENU = """
                  ------------------------
                  | Welcome to Hookit!   |
                  |  1. Login            |

@@ -13,13 +13,13 @@ def format_menu():
 
     if random_number == 1:
         answer = "Match Play"
-        
+
     elif random_number == 2:
         answer = "Scramble"
 
     elif random_number == 3:
         answer = "Stroke Play"
-        
+
     elif random_number == 4:
         answer = "Bestball"
 
@@ -30,8 +30,6 @@ def format_menu():
         "Error, please try again"
 
     print(f'You will be playing: {answer}')
-
-        
 
 
 format_menu()

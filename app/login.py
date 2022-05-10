@@ -1,65 +1,37 @@
-from tkinter import *
-import sqlite3
-import random
+import tkinter as tk
+
 
 def login():
 
-    root = Tk()
+
+    root = tk.Tk()
     root.title('Hookit')
     root.geometry("325x250")
 
-    username = Entry(root, width=30)
+    username = tk.Entry(root, width=30)
     username.grid(row=0, column=1, padx=20)
-    password = Entry(root, width=30)
+    password = tk.Entry(root, width=30)
     password.grid(row=1, column=1)
 
-    username_label = Label(root, text='Username')
+    username_label = tk.Label(root, text='Username')
     username_label.grid(row=0, column=0)
-    password_label = Label(root, text="Password")
+    password_label = tk.Label(root, text="Password")
     password_label.grid(row=1, column=0)
 
-    submit_btn = Button(root, text="Login")
+    submit_btn = tk.Button(root, text="Login")
     submit_btn.grid(row=2, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
-
 
     root.mainloop()
 
     return username_label, password_label
-#Create database connection
-# def submit():
-   
-#     conn = sqlite3.connect('hookit.db')
-
-#     c = conn.cursor()
-    # c.execute("CREATE TABLE player (username TEXT, password TEXT);")
-#     values = {
-#     'id': Integer, 'username': text, 'password': text
-    
-# }
-#     c.execute(
-#     'INSERT INTO players (id, username, password) VALUES (:id, :username, :password);', 
-#     values)
-#     c.execute("INSERT INTO players VALUES (:id, :username, :password);", {"id": key.get(), "username": username.get(), "password": password.get()})
-    
-#     conn.commit()
-#     conn.close()
-
-# key = {k: random.random() for k in range(100)}
 
 
-    
-  
-
-
-
-    
 # root.mainloop()
 # Label(text = "Hookit - Hook your wedge or hook with your friends", bg = "grey", width = "300", height = "2", font = ("Calibri", 13)).pack()
 # Label(text = "").pack()
 # Button(text = "Login", height = "2", width = "30").pack()
 # Label(text = "").pack()
 # Button(text = "Register", height = "2", width = "30", command = submit).pack()
-
 
 
 # def register():
@@ -78,11 +50,6 @@ def login():
 #     Button(screen1, text = "Register", width = 10, height = 1, command = submit).pack()
 
 
-
-
-
-
-
 # def main_screen():
 #     global screen
 #     screen = Tk()
@@ -97,4 +64,3 @@ def login():
 #     screen.mainloop()
 
 # main_screen()
-
