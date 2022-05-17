@@ -30,6 +30,3 @@ def format_menu():
         "Error, please try again"
 
     print(f'You will be playing: {answer}')
-
-
-format_menu()
