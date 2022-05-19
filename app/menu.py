@@ -61,8 +61,8 @@ def login():
     #     window.destroy()
 
 
-Button(window, text = "Login", command=login).grid(row=1, sticky=W)
-Button(window, text = "Add user", command=create_user).grid(row=2, sticky=W)
+Button(window, text="Login", command=login).grid(row=1, sticky=W)
+Button(window, text="Add user", command=create_user).grid(row=2, sticky=W)
 Button(window, text="Exit", command=exit).grid(row=3, sticky=W)
 
 window.mainloop()
