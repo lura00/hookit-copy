@@ -49,7 +49,7 @@ def user_menu():
         elif user_input == 4:
             name = input("Enter users name to find: ")
             user = database.get_user_by_name(connection, name)
-            # Adding print-statement to make this funciton work
+
             print(user)
 
         elif user_input == 5:
