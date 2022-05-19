@@ -1,18 +1,19 @@
 import database
 from log_in import getInput
+import menu
 
 
-def show_menu():
-    print("\n===========================================================")
-    print("|                    Welcome to Hookit!                   |")
-    print("|                                                         |")
-    print("|               Would you like to login?      press .1    |")
-    print("|               Would you like to add a user? press .2    |")
-    print("|               See all users?                press .3    |")
-    print("|               Search for specific user?     press .4    |")
-    print("|               Delete post?                  press .     |")
-    print("|               Exit                          press .5    |")
-    print("===========================================================")
+# def show_menu():
+#     print("\n===========================================================")
+#     print("|                    Welcome to Hookit!                   |")
+#     print("|                                                         |")
+#     print("|               Would you like to login?      press .1    |")
+#     print("|               Would you like to add a user? press .2    |")
+#     print("|               See all users?                press .3    |")
+#     print("|               Search for specific user?     press .4    |")
+#     print("|               Delete post?                  press .     |")
+#     print("|               Exit                          press .5    |")
+#     print("===========================================================")
 
 
 def user_menu():
@@ -21,7 +22,7 @@ def user_menu():
 
     while True:
 
-        show_menu()
+        menu()
         user_input = int(input("Make a choice from menu: "))
 
         if user_input == 1:

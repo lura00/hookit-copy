@@ -7,13 +7,6 @@ window = Tk()
 
 # Log in labels
 
-Label(window, text="Enter username: ").grid(row=0, sticky=W)
-Label(window, text="Enter password: ").grid(row=1, sticky=W)
-username = Entry(window)
-password = Entry(window)
-username.grid(row=0, column=1)
-password.grid(row=1, column=1)
-
 
 def getInput():
     a = username.get()
@@ -70,16 +63,24 @@ def create_user():
     username.grid(row=5, column=1)
     password1.grid(row=6, column=1)
 
-    Button(window, text="Create & save", command=saveToDb).grid(row=7, sticky=W)
+    # Button(window, text="Create & save", command=saveToDb).grid(row=7, sticky=W)
 
 def login():
+
+    Label(window, text="Enter username: ").grid(row=0, sticky=W)
+    Label(window, text="Enter password: ").grid(row=1, sticky=W)
+    username = Entry(window)
+    password = Entry(window)
+    username.grid(row=0, column=1)
+    password.grid(row=1, column=1)
     connection = database.connect()
-    database.create_tables(connection)
+    cur = connection.cursor()
     uname_auth = username.get()
     pswd_auth = password.get()
 
     authentication = (uname_auth, pswd_auth)
-    all_users = database.get_all_users(connection)
+    cur.execute("SELECT * FROM users;")
+    all_users = cur.fetchall()
     
     if authentication in all_users:
         messagebox.showinfo(title="Welcome", message=uname_auth)
@@ -88,7 +89,7 @@ def login():
 
 
 
-Button(window, text = "Login", command=login).grid(row=8, sticky=W)
-Button(window, text = "Create new user", command=create_user).grid(row=9, sticky=W)
+# Button(window, text = "Login", command=login).grid(row=8, sticky=W)
+# Button(window, text = "Create new user", command=create_user).grid(row=9, sticky=W)
 
-window.mainloop()
+# window.mainloop()

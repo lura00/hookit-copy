@@ -21,3 +21,10 @@ jobs:
         with:
           ignore: "E501"
           path: "app"
+
+      - name: Unit testing with pytest
+        run: |
+          python3.9 -m pip install pytest
+          pytest ./tests -v
+      - name: Check coverage
+        uses: lpenz/ghaction-pytest-cov@v1
