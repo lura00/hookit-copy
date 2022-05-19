@@ -1,9 +1,11 @@
-from tkinter import *
+from tkinter import Tk, Button, Label, Entry, W
 from tkinter import messagebox
 from log_in import login, create_user
 import database
 
+
 window = Tk()
+
 
 def show_menu():
     print("\n===========================================================")
@@ -17,6 +19,7 @@ def show_menu():
     print("|               Exit                          press .5    |")
     print("===========================================================")
 
+
 def see_spec_user():
     window = Tk()
     conn = database.connect()
@@ -26,14 +29,12 @@ def see_spec_user():
     Button(window, text="Submit", command=database.get_user_by_name(conn, name.get())).grid(row=2, sticky=W)
 
 
-
 def new_menu():
     window = Tk()
     conn = database.connect()
     Button(window, text="See all users", command=database.get_all_users(conn)).grid(row=1, sticky=W)
     Button(window, text="See specific users", command=see_spec_user).grid(row=2, sticky=W)
    # Button(window, text="See all users", command=database.delete_user).grid(row=3, sticky=W)
-
 
 
 def login():
@@ -58,7 +59,6 @@ def login():
     # else:
     #     messagebox.showerror(title="ACCESS DENIED", message="Have you forgotten your password?")
     #     window.destroy()
-
 
 Button(window, text = "Login", command=login).grid(row=1, sticky=W)
 Button(window, text = "Add user", command=create_user).grid(row=2, sticky=W)

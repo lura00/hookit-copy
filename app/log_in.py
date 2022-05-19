@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Tk, Label, Entry
 from tkinter import messagebox
 import database
 
@@ -86,8 +86,6 @@ def login():
         messagebox.showinfo(title="Welcome", message=uname_auth)
     else:
         messagebox.showerror(title="ACCESS DENIED", message="Have you forgotten your password?")
-
-
 
 # Button(window, text = "Login", command=login).grid(row=8, sticky=W)
 # Button(window, text = "Create new user", command=create_user).grid(row=9, sticky=W)
