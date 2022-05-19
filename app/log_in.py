@@ -29,7 +29,7 @@ def saveToDb():
     e = homecourse.get()
     f = username.get()
     g = password1.get()
-    database.add_user(connection, a, b, c,d, e, f, g)
+    database.add_user(connection, a, b, c, d, e, f, g)
     messagebox.showinfo(title="New user", message="Successfully added a new user")
     window.destroy()
 
@@ -82,7 +82,7 @@ def create_user():
 #     authentication = (uname_auth, pswd_auth)
 #     cur.execute("SELECT * FROM users;")
 #     all_users = cur.fetchall()
-    
+
 #     if authentication in all_users:
 #         messagebox.showinfo(title="Welcome", message=uname_auth)
 #     else:

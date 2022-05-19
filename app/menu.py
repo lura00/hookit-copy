@@ -1,6 +1,6 @@
 from tkinter import Tk, Button, Label, Entry, W
 from tkinter import messagebox
-from log_in import login, create_user
+from log_in import create_user
 import database
 
 
@@ -34,7 +34,7 @@ def new_menu():
     conn = database.connect()
     Button(window, text="See all users", command=database.get_all_users(conn)).grid(row=1, sticky=W)
     Button(window, text="See specific users", command=see_spec_user).grid(row=2, sticky=W)
-   # Button(window, text="See all users", command=database.delete_user).grid(row=3, sticky=W)
+    # Button(window, text="See all users", command=database.delete_user).grid(row=3, sticky=W)
 
 
 def login():
@@ -53,12 +53,13 @@ def login():
     authentication = (uname_auth, pswd_auth)
     cur.execute("SELECT * FROM users;")
     all_users = cur.fetchall()
-    
+
     if authentication in all_users:
         messagebox.showinfo(title="Welcome", message=uname_auth)
     # else:
     #     messagebox.showerror(title="ACCESS DENIED", message="Have you forgotten your password?")
     #     window.destroy()
+
 
 Button(window, text = "Login", command=login).grid(row=1, sticky=W)
 Button(window, text = "Add user", command=create_user).grid(row=2, sticky=W)
