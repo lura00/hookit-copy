@@ -29,6 +29,8 @@ Men det som "räddade" var som sagt att det inte var så komplicerad kod. Allt s
 
 Jag och Bernard hade även ett möte under överlämningsveckan så han fick gå igenom sin kod tillsammans med mig, samt visa en körning. Detta underlättade lite för mig också.
 
+Det som har varit svårt för mig har varit att få ett grepp om hur man kodar ett GUI med tkinter. Det har gjort att jag har fått se över mycket av kodbasen jag tog över samt skriva om en hel del saker, för att förstå saker och ting. Detta har i sin tur gjort att jag inte hunnit så långt som jag kanske velat.
+
 # Att överlämna sin codebase till någon annan
 
 Generellt så tycker jag att man bör vara så tydlig som möjligt, nästan överdriva om så behövs för att få något krångligt låta enkelt. "explain it to me like Im five". Det var lite det jag utgick från när jag förberedde min överlämning. Jag försökte lägga kodkommentarer löpande där jag upplevde att det behövdes plus i min README så delade jag upp alla delar i olika steg och försökte vara så tydligt som möjligt med eventuella errors jag hade och hur jag löste dom.
