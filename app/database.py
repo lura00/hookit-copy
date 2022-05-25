@@ -3,9 +3,9 @@ import sqlite3
 
 CREATE_USER_TABLE = "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, handicap INTEGER, age INTEGER, gender TEXT, homecourse TEXT, username VARCHAR, password VARCHAR);"
 
-CREATE_FORMAT_TABLE = "CREATE TABLE IF NOT EXISTS format (id INTEGER PRIMARY KEY, format1 TEXT, format2 TEXT, format3 TEXT, format4 TEXT, format5 TEXT);"
+CREATE_POST_TABLE = "CREATE TABLE IF NOT EXISTS posts (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL);"
 
-INSERT_FORMAT = "INSERT INTO format (format1, format2, format3, format4, format5) VALUES (Scramble, Bestball, Alternate Shot, Match play, Stroke play);"
+INSERT_POST = "INSERT INTO posts VALUES (NULL, ?);"
 
 INSERT_USER = "INSERT INTO users (name, handicap, age, gender, homecourse, username, password) VALUES (?, ?, ?, ?, ?, ?, ?);"
 
@@ -38,11 +38,11 @@ def get_user_by_name(connection, name):
         return connection.execute(GET_USER_BY_NAME, (name,)).fetchall()
 
 
-def create_format_table(connection):
+def create_post_table(connection):
     with connection:
-        connection.execute(CREATE_FORMAT_TABLE)
+        connection.execute(CREATE_POST_TABLE)
 
 
-def add_format(connection, format1, format2, format3, format4, format5):
+def add_post(connection, post):
     with connection:
-        connection.execute(INSERT_USER, (format1, format2, format3, format4, format5))
+        connection.execute(INSERT_POST, (post,))

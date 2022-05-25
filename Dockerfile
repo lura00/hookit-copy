@@ -1,11 +1,13 @@
 FROM python:3
 
-WORKDIR /hookit
+WORKDIR /app
 
 COPY requirements.txt ./
+
+ENV DISPLAY :0
 
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "app/main.py"]
+CMD ["python", "app/menu.py"]

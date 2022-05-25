@@ -5,11 +5,11 @@ Spin the Wheel!
 Press Enter to spin the wheel!
 """
 
-random_number = random.randint(1, 5)
-answer = ""
-
 
 def format_menu():
+
+    random_number = random.randint(1, 5)
+    answer = ""
 
     if random_number == 1:
         answer = "Match Play"
@@ -29,4 +29,4 @@ def format_menu():
     else:
         "Error, please try again"
 
-    print(f'You will be playing: {answer}')
+    return answer
