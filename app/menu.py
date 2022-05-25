@@ -12,7 +12,7 @@ import database
 
 
 window = Tk()
-window.geometry('450x200')  
+window.geometry('450x200')
 
 
 def listBox():
@@ -44,7 +44,7 @@ def get_all_users():
 
 def see_spec_user():
     window = Tk()
-    window.geometry('400x150') 
+    window.geometry('400x150')
     Label(window, text="Enter name of player: ").grid(row=1, sticky=W)
     global name
     name = Entry(window)
@@ -85,7 +85,7 @@ def save_post():
 
 def create_post():
     window = Tk()
-    window.geometry('400x150') 
+    window.geometry('400x150')
     Label(window, text="Enter post: ").grid(row=0, sticky=W)
     global post
     post = Entry(window)
@@ -187,18 +187,17 @@ def auth_login():
     check = all(item in all_users for item in authentication)
 
     print(check)
-    if check == True:
+    if check is True:
         messagebox.showinfo(title="Welcome", message=username.get())
         new_menu()
         window.destroy()
     else:
         messagebox.showerror(title="ACCESS DENIED", message="Have you forgotten your password?")
-        # window.destroy()
 
-# Plocka ut del av login logik och sätt i egen funktion och kalla på i "command" i knapp "Login".
+
 def login_button():
     window = Tk()
-    window.geometry('400x150') 
+    window.geometry('400x150')
     Label(window, text="Enter username: ").grid(row=0, sticky=W)
     Label(window, text="Enter password: ").grid(row=1, sticky=W)
     global username
@@ -209,7 +208,7 @@ def login_button():
     password.grid(row=1, column=1)
     Button(window, text="Login", command=auth_login).grid(row=3, sticky=W)
     # window.destroy()
-    
+
 
 Button(window, text="Login", command=login_button).grid(row=4, sticky=W)
 Button(window, text="Add user", command=create_user).grid(row=5, sticky=W)
