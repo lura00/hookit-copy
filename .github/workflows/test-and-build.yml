@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: my_file.txt
+          path: ./tests/pytest-coverage.txt
           retention-days: 5
       -
         name: Login to Docker Hub
@@ -61,6 +61,6 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/proxy-http:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/proxy-http:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/proxy-http:buildcache,mode=max
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/golf-app:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/golf-app:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/golf-app:buildcache,mode=max
