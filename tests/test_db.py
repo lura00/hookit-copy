@@ -1,4 +1,7 @@
-from ..app import database
+try: 
+    from ..app import database
+except:
+    from app import database
 
 
 """Tests run with pytest. They test multiple functions TEST"""
