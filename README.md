@@ -25,7 +25,7 @@ Database
 All functions run on a tkinter GUI, it works but could perhaps look nicer.
 
 ## Dockerfile
-- Dockerfile is ok, docker build runs and build and image.
+- Dockerfile is ok, "docker build" runs and build an image.
 - "Docker run" wont work, it says it misses som environment variable, "display". I haven't figured it out yet.
 - Docker build and push in the pipeline is stuck due to an authentication problem. It should work, but still working to 
     make a few things work together.

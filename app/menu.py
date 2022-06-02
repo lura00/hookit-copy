@@ -8,7 +8,7 @@ import database
 """Program that runs with pythons tkinter GUI. Stores and fetches data from sqlite-database.
     format_menu and database is two other py-files with functionalities exaclty what they sound like.
     format has a function that randomly choose between 5 games to play on the golf court and database
-    has the database functionality."""
+    has the database functionality. TEST PIPELINE"""
 
 
 window = Tk()

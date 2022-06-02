@@ -1,7 +1,7 @@
-from app import database
+from ..app import database
 
 
-"""Tests run with pytest. They test multiple functions"""
+"""Tests run with pytest. They test multiple functions TEST"""
 
 
 def test_create_table_and_insert_data():
